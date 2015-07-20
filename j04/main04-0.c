@@ -6,10 +6,11 @@
 /*   By: abruneau <abruneau@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/07/20 17:23:58 by abruneau          #+#    #+#             */
-/*   Updated: 2015/07/20 17:30:13 by abruneau         ###   ########.fr       */
+/*   Updated: 2015/07/20 18:03:44 by abruneau         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <unistd.h>
 #include <stdio.h>
 
 int	ft_iterative_factorial(int nb);
@@ -17,7 +18,10 @@ int	ft_iterative_factorial(int nb);
 int main(void)
 {
 	printf("%d", ft_iterative_factorial(-1));
+	ft_putchar('\n');
 	printf("%d", ft_iterative_factorial(0));
+	ft_putchar('\n');
 	printf("%d", ft_iterative_factorial(5));
+	ft_putchar('\n');
 	return (0);
 }
