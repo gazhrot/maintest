@@ -6,7 +6,7 @@
 #    By: angagnie <angagnie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/07/21 17:24:39 by angagnie          #+#    #+#              #
-#    Updated: 2015/07/22 19:20:03 by angagnie         ###   ########.fr        #
+#    Updated: 2015/07/22 23:23:28 by angagnie         ###   ########.fr        #
 #                                                                              #
 #******************************************************************************#
 
@@ -20,7 +20,7 @@
 NAME=launch_me
 # Just put a ']' and the file's name or [ for debug/release.
 SRCLIST=]ex00/ft_create_elem.c ]ex01/ft_list_push_back.c ]ex02/ft_list_push_front.c \
-	]ex03/ft_list_size.c \
+	]ex03/ft_list_size.c ]ex04/ft_list_last.c ]ex05/ft_list_push_params.c \
 	]tests/main.c ]tests/ft_print_list.c
 # Headers' names, again with a ']' This may actually be useless.
 HDRLIST=]tests/header.h
@@ -81,8 +81,8 @@ $(CCHPATH)%.h.gch: $(HDRPATH)%.h $(CCHPATH)
 $(CCHPATH):
 	@echo "\033[0;33m - cache folders not yet existing\033[1;37m"
 	@mkdir $(CCHPATH) $(CCHPATH)/tests
-	@mkdir $(CCHPATH)/ex00 $(CCHPATH)/ex01  $(CCHPATH)/ex02
-	@mkdir $(CCHPATH)/ex03 $(CCHPATH)/ex04
+	@mkdir $(CCHPATH)/ex00 $(CCHPATH)/ex01 $(CCHPATH)/ex02
+	@mkdir $(CCHPATH)/ex03 $(CCHPATH)/ex04 $(CCHPATH)/ex05
 
 # == Rule deleting compiled files : The cache folder ==
 clean:

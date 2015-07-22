@@ -6,7 +6,7 @@
 /*   By: angagnie <angagnie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/07/22 15:02:22 by angagnie          #+#    #+#             */
-/*   Updated: 2015/07/22 19:23:08 by angagnie         ###   ########.fr       */
+/*   Updated: 2015/07/22 23:28:18 by angagnie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int		main(int ac, char **av)
 			else
 				str2 = strdup("Ave");
 			tmp = ft_create_elem(str1);
-			printf("Ex 02 :\n\t- expected [| %s ; %s ; %s |] (normal push front)\n\t\t%s", str1, str2, str2, GREEN);
+			printf("Ex 02 :\n\t- expected [| %s ; %s ; %s |] (normal front back)\n\t\t%s", str1, str2, str2, GREEN);
 			ft_list_push_front(&tmp, str2);
 			ft_list_push_front(&tmp, str2);
 			ft_print_list_str(tmp);
@@ -75,9 +75,12 @@ int		main(int ac, char **av)
 			break ;
 		case 3 :
 			if (k + 1 < ac)
+			{
 				i = atoi(av[++k]);
+				i *= (i < 0 ? -1 : 1);
+			}
 			else
-				i = 5;
+				i = 13;
 			j = -1;
 			tmp = NULL;
 			str1 = strdup("Tralala");
@@ -88,6 +91,21 @@ int		main(int ac, char **av)
 				printf("%s[Ex03 OK]%s\t(tested on a list of %i elements)\n", GREEN, END, i);
 			else
 				printf("%s>>>[Ex03 FAIL]<<<%s\t(a list of %i elements is not %i element long)\n", RED, END, i, j);
+			break ;
+		case 4 :
+			str1 = strdup("\e[1;31m>>>[Ex04 FAIL]<<<\e[0;0m");
+			str2 = strdup("\e[1;32m[Ex04 OK]\e[0;0m");
+			tmp = NULL;
+			i = -1;
+			ft_list_push_front(&tmp, str2);
+			while (++i < 50)
+				ft_list_push_front(&tmp, str1);
+			printf("%s\t(tested on a list of 50 elements)\n", (char*)ft_list_last(tmp)->data);
+			break ;
+		case 5 :
+			printf("Ex05 : You should the the arguments you passed ina reversed order :\n\t%s", GREEN);
+			ft_print_list_str(ft_list_push_params(ac, av));
+			printf("%s\n", END);
 			break ;
 		}
 }
