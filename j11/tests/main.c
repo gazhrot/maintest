@@ -62,11 +62,11 @@ int		main(int ac, char **av)
 			else
 				str2 = strdup("Ave");
 			tmp = ft_create_elem(str1);
-			printf("Ex 02 :\n\t- expected [| %s ; %s ; %s |] (normal push back)\n\t\t%s", str1, str2, str2, GREEN);
+			printf("Ex 02 :\n\t- expected [| %s ; %s ; %s |] (normal push front)\n\t\t%s", str1, str2, str2, GREEN);
 			ft_list_push_front(&tmp, str2);
 			ft_list_push_front(&tmp, str2);
 			ft_print_list_str(tmp);
-			printf("%s\t- expected [| %s ; %s |] (push back on an empty list)\n\t\t%s", END, str1, str2, GREEN);
+			printf("%s\t- expected [| %s ; %s |] (push front on an empty list)\n\t\t%s", END, str1, str2, GREEN);
 			tmp = NULL;
 			ft_list_push_front(&tmp, str1);
 			ft_list_push_front(&tmp, str2);
